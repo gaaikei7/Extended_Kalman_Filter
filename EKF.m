@@ -30,9 +30,9 @@ R = v^2;                    %测量值的方差
 
 h=@(x)[x(2);x(4);x(6)];                  %测量方程
 s=[1;2;3;3;2;1];                            %初始状态
-x=s+w*randn(6,1);                      %初始化状态
-P = eye(6);                                 %初始化协方差矩阵
-xV = zeros(6,len);                       %EKF估计值
+x=s+w*randn(6,1);                      %初始化状态，randn返回一个n*n的随机项的矩阵
+P = eye(6);                                 %初始化协方差矩阵，返回单位矩阵
+xV = zeros(6,len);                       %EKF估计值，zeros生成零矩阵
 sV = zeros(6,len);                       %真实值
 zV = zeros(3,len);                       %测量值
 
